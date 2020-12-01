@@ -60,11 +60,11 @@ while nivel != 4: # Faz o retorno ao menu
                 if resultUser == result:
                     print('Certo')
 
-                    novamente=input('Quer tentar de novo [S/N]? -> ').upper() # Jogar modo soma novamente
+                    novamente=input('Jogar novamente? [S/N]? -> ').upper() # Jogar modo soma novamente
 
                 else:
                     print('Errado')
-                    novamente=input('Quer tentar de novo [S/N]? -> ').upper() # Jogar modo soma novamente
+                    novamente=input('Jogar novamente? [S/N]? -> ').upper() # Jogar modo soma novamente
 
         if op == 2: # Modo Subtração
              novamente = str()
@@ -118,26 +118,26 @@ while nivel != 4: # Faz o retorno ao menu
                 print('Modo Divisão')
 
 #Controle númerico *em processo de criação*
+                result = n1 = n2 = int()
+                resto = 1
+                while resto != 0:
+                    n1 = random.randint(1, 100)
+                    n2 = random.randint(1, 100)
 
-                n1=int(random.randint(1, 20))
-                n2=int(random.randint(1, 20))
+                    resto=n1%n2 
+                    result=n1/n2
 
-#//
+                resultUser=int(input('Quanto é {}/{}? ->'.format(n1, n2)))
 
-                result=n1/n2
-
-                resultUser=float(input('Quanto é {}/{}? ->'.format(n1, n2)))
-
-# Validação do resultado
-            
+# Validação do resultado          
                 if resultUser == result:
                     print('Certo')
 
-                    novamente=input('Quer tentar de novo [S/N]? -> ').upper() # Jogar modo divisão novamente
+                    novamente=input('Jogar novamente? [S/N]? -> ').upper() # Jogar modo divisão novamente
 
                 else:
                     print('Errado')
-                    novamente=input('Quer tentar de novo [S/N]? -> ').upper() # Jogar modo divisão novamente
+                    novamente=input('Jogar novamente? [S/N]? -> ').upper() # Jogar modo divisão novamente
 
         if op == 2: # Modo Multiplicação
              novamente = str()
@@ -166,9 +166,35 @@ while nivel != 4: # Faz o retorno ao menu
         if op == 3: # Sair
             pass
 
-
+# Entrada nível 3
     if nivel == 3:
-        print('Nível indisponível, volte mais tarde')
+        
+            novamente = str()
+            while novamente != 'N': # Jogar modo exponenciação novamente
+
+                print('Modo Exponenciação')
+
+#Controle númerico *em processo de criação*
+
+                n1=int(random.randint(1, 10))
+                n2=int(random.randint(1, 10))
+
+#//
+
+                result=n1**n2
+
+                resultUser=float(input('Quanto é {}^{}? ->'.format(n1, n2)))
+
+# Validação do resultado
+            
+                if resultUser == result:
+                    print('Certo')
+
+                    novamente=input('Jogar novamente? [S/N]? -> ').upper() # Jogar modo divisão novamente
+
+                else:
+                    print('Errado')
+                    novamente=input('Jogar novamente? [S/N]? -> ').upper() # Jogar modo divisão novamente
 
     if nivel == 4:
         print('\nBye, volte sempre {}!\n'.format(nome))
